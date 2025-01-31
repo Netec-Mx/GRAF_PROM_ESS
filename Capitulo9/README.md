@@ -1,13 +1,16 @@
-# 9. Implementando reverse proxy en prometheus y grafana
+# Práctica 9. Implementando reverse proxy en Prometheus y Grafana
 
-Para proteger prometheus y grafana necesitaremos implementar un reverse proxy que nos permitira controlar la entrada a nuestros servicios. 
+Para proteger Prometheus y Grafana necesitaremos implementar un reverse proxy que nos permitira controlar la entrada a nuestros servicios. 
 
 ## Objetivos
-- Configuración de nginx
-- Configuración de un reverse proxy en nginx
-- Configuración de grafana y prometheus para un reverse proxy
+- Configuración de nginx.
+- Configuración de un reverse proxy en nginx.
+- Configuración de Grafana y Prometheus para un reverse proxy.
 - Usar docker compose para levantar las aplicaciones. 
 
+## Duración aproximada:
+- 60 minutos.
+  
 ---
 
 <div style="width: 400px;">
@@ -46,7 +49,7 @@ Este laboratorio esta dividido en las siguientes secciones:
 
 
 ## Configuración nginx [return](#instrucciones)
-1. Crear una carpeta en el escritorio que llamaremos **proxy**
+1. Crear una carpeta en el escritorio que llamaremos **proxy**.
 
 2. Dentro de la carpeta **proxy** crear un archivo con el nombre **proxy.conf** y añadir el siguiente contenido:
 
@@ -83,11 +86,11 @@ server{
 ```
 
 > **NOTA**: En la configuración anterior se implementa el proxy
-para **prometheus y grafana**
+para **Prometheus y Grafana**.
 
 3. En la carpeta **proxy** crear otro archivo que llamaremos
 **error404.html** que nos servirá para personalizar la página de error
-de nginx
+de nginx.
 
 4. En el archivo **error404.html** añadir el siguiente contenido:
 
@@ -123,7 +126,7 @@ de nginx
 </html>
 ```
 
-5. Guardar todo y obtener sus rutas absolutas (la usaremos más adelante)
+5. Guardar todo y obtener sus rutas absolutas (la usaremos más adelante).
 
 ```bash
 #path_proxy.conf
@@ -134,9 +137,9 @@ C:\Users\egar2\Escritorio\proxy\error404.html
 ```
 
 
-## Configuración prometheus [return](#instrucciones)
+## Configuración Prometheus [return](#instrucciones)
 1. Dentro de la carpeta **proxy** crear un archivo que llamaremos 
-**prometheus.yaml**
+**prometheus.yaml**.
 
 2. Dentro del archivo **prometheus.yaml** añadiremos lo siguiente:
 
@@ -149,7 +152,7 @@ scrape_configs:
       - targets: ['client:8084']
 ```
 
-3. Guardaremos todo y obtendremos su path absoluto
+3. Guardar todo y obtendremos su path absoluto.
 
 ```bash
 C:\Users\egar2\Escritorio\proxy\prometheus.yaml
@@ -163,9 +166,9 @@ carpeta **proxy** tengamos los siguientes archivos:
 
 ![files](../images/9/1.png)
 
-2. En la carpeta **proxy** crear un archivo que llamaremos **docker-compose.yaml**
+2. En la carpeta **proxy** crear un archivo que llamaremos **docker-compose.yaml**.
 
-3. En el archivo **docker-compose.yaml** añadiremos el siguiente contenido:
+3. En el archivo **docker-compose.yaml** añadir el siguiente contenido:
 
 ```yaml
 services:
@@ -241,11 +244,11 @@ networks:
 
 
 
-4. Guardar todo
+4. Guardar todo.
 
-5. Abrir una terminal en la carpeta **proxy**
+5. Abrir una terminal en la carpeta **proxy**.
 
-6. Ejecutar el siguiente comando
+6. Ejecutar el siguiente comando:
 
 ```bash
 docker-compose up -d
@@ -269,7 +272,7 @@ docker ps
 
 ## Resultado esperado
 
-Si hemos llegado hasta este punto abriremos a grafana y prometheus desde el proxy:
+Si hemos llegado hasta este punto abriremos a Grafana y Prometheus desde el proxy:
 
 - **URL Grafana:** http://localhost/grafana
 
