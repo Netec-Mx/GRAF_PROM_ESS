@@ -1,11 +1,14 @@
-# 6. Panel dinámico Grafana
+# Práctica 6. Panel dinámico Grafana
 Se requiere que el alumno creé un panel dinámico en grafana tomando en cuenta un servicio de descubrimiento. 
 
 ## Objetivos
-- Configurar prometheus para el autodescubrimiento de servicios
+- Configurar prometheus para el autodescubrimiento de servicios.
 - Iniciar Docker-compose para la orquestación de múltiples microservicios. 
-- Crear panel con variables en Grafana
+- Crear panel con variables en Grafana.
 
+## Duración aproximada:
+- 60 minutos.
+  
 ---
 
 <div style="width: 400px;">
@@ -43,8 +46,8 @@ Este laboratorio se separa en las siguientes secciones:
 - **[Panel con variables](#panel-con-variables-return)**
 
 ## Archivo de configuración prometheus [return](#instrucciones)
-1. Crear un archivo una carpeta en el escritorio que llamaremos **clase**
-2. Dentro de la carpeta crear un archivo con el nombre **prometheus.yaml**
+1. Crear un archivo una carpeta en el escritorio que llamaremos **clase**.
+2. Dentro de la carpeta crear un archivo con el nombre **prometheus.yaml**.
 3. En el archivo **prometheus.yaml** añadir el siguiente contenido:
 
 ```yaml
@@ -72,7 +75,7 @@ C:\Users\egar2\Escritorio\clase\prometheus.yaml
 
 ## Docker Compose [return](#instrucciones)
 1. En la carpeta **clase** que creamos en la sección anterior crearemos un archivo
-llamado **docker-compose.yaml**
+llamado **docker-compose.yaml**.
 
 2. En el archivo **docker-compose.yaml** añadiremos el siguiente contenido:
 
@@ -141,7 +144,7 @@ networks:
           gateway: 192.168.32.1
 ```
 
-3. Guardar tu archivo **docker-compose.yaml**
+3. Guardar el archivo **docker-compose.yaml**.
 4. Abrir una terminal en la ubicación de tu archivo **prometheus.yaml**
 y ejecutar el siguiente comando:
 
@@ -149,7 +152,7 @@ y ejecutar el siguiente comando:
 docker-compose up -d
 ```
 
-> **NOTA**: El comando anterior levanta 4 contenedores, prometheus, eureka y 
+> **NOTA**: El comando anterior levanta 4 contenedores, Prometheus, Eureka y 
 2 instancias del microservicio cliente. 
 
 5. Validar que sus 4 contenedores esten arriba con el siguiente comando:
@@ -160,15 +163,15 @@ docker ps
 
 ![containers](../images/6/1.png)
 
-6. Abrir el dashboard (http://localhost:9090) de prometheus y validar en **Status->Target health** que esten registrados tus 2 instancias de cliente. 
+6. Abrir el dashboard (http://localhost:9090) de Prometheus y validar en **Status->Target health** que esten registrados tus 2 instancias de cliente. 
 
 ![prometheus](../images/6/2.png)
 
 ## Panel con variables [return](#instrucciones)
 
-1. Abrir el panel (http://localhost:3000) de grafana e iniciar sesión
+1. Abrir el panel (http://localhost:3000) de Grafana e iniciar sesión.
 
-2. Crear un nuevo dashboard
+2. Crear un nuevo dashboard.
 
 3. En los **Settings** del dashboard añadiremos la siguiente configuración:
 - **Title**: Panel dinámico
@@ -207,9 +210,9 @@ docker ps
 
 ![final](../images/6/5.png)
 
-9. **(OPCIONAL)** Prueba crear más visualizaciones usando las variables en grafana. 
+9. **(OPCIONAL)** Prueba crear más visualizaciones usando las variables en Grafana. 
 
-## Resultado Esperado [Instrucciones](#instrucciones)
+## Resultado esperado [Instrucciones](#instrucciones)
 Se espera que el alumno tenga un panel dinámico que cambie dependiendo de las variables seleccionadas en tus visualizaciones. 
 
 
