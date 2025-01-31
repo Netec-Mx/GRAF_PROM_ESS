@@ -1,4 +1,4 @@
-# 1. Práctica 1. Comparación de herramientas
+# Práctica 1. Comparación de herramientas
 
 En este laboratorio se busca que el alumno pueda investigar la popularidad de Prometheus y Grafana en el mundo. 
 
