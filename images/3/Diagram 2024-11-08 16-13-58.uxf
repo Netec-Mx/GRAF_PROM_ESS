@@ -1,0 +1,34 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLPackage</id><coordinates><x>40</x><y>40</y><w>730</w><h>400</h></coordinates><panel_attributes>Server
+--
+bg=white
+fg=#19612a
+fontsize=21
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>170</y><w>190</w><h>120</h></coordinates><panel_attributes>*Container*
+--
+halign=center
+
+microservice client
+Running
+
+fg=#192461
+
+fontsize=16</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>170</y><w>190</w><h>120</h></coordinates><panel_attributes>*Container*
+--
+halign=center
+
+prometheus
+Running
+
+fg=#192461
+
+fontsize=16</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>170</y><w>140</w><h>120</h></coordinates><panel_attributes>*exports metrics*
+
+/actuator/prometheus</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>210</y><w>60</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>40;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>210</y><w>140</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+read metrics</panel_attributes><additional_attributes>10;20;120;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>460</y><w>230</w><h>100</h></coordinates><panel_attributes>http://prometheus_ip:9090
+
+Query data in dashboard
+
+fontsize=17
+
+fg=#751d6b</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>280</y><w>30</w><h>200</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-&gt;&gt;&gt;</panel_attributes><additional_attributes>10;180;10;10</additional_attributes></element></diagram>

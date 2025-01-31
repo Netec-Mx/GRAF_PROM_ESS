@@ -1,0 +1,44 @@
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><element><id>UMLPackage</id><coordinates><x>80</x><y>192</y><w>704</w><h>416</h></coordinates><panel_attributes>Docker server
+--
+bg=white
+fontsize=21
+fg=#111d9e</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>288</y><w>152</w><h>96</h></coordinates><panel_attributes>*Container*
+--
+halign=center
+
+microservice client
+Running
+
+fg=#192461
+
+fontsize=16</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>496</x><y>288</y><w>160</w><h>96</h></coordinates><panel_attributes>*Container*
+--
+halign=center
+
+prometheus
+Running
+port=9090
+
+fg=#192461
+
+fontsize=16</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>296</x><y>288</y><w>112</w><h>96</h></coordinates><panel_attributes>*exports metrics*
+
+/actuator/prometheus</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>264</x><y>320</y><w>48</w><h>32</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>40;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>320</y><w>112</w><h>32</h></coordinates><panel_attributes>lt=&lt;-
+read metrics</panel_attributes><additional_attributes>10;20;120;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>496</x><y>448</y><w>160</w><h>96</h></coordinates><panel_attributes>*Container*
+--
+halign=center
+
+Grafana
+Running
+export=8080
+
+fg=#192461
+
+fontsize=16</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>376</y><w>24</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>632</y><w>304</w><h>144</h></coordinates><panel_attributes>*Dashboard microservice client*
+fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>456</x><y>664</y><w>112</w><h>40</h></coordinates><panel_attributes>bg=#0d590f</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>592</x><y>664</y><w>112</w><h>40</h></coordinates><panel_attributes>bg=#140d59</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>456</x><y>720</y><w>112</w><h>40</h></coordinates><panel_attributes>bg=#480d59</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>592</x><y>720</y><w>112</w><h>40</h></coordinates><panel_attributes>bg=#9e115a</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>536</y><w>24</w><h>112</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-&gt;&gt;&gt;</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>824</x><y>424</y><w>304</w><h>144</h></coordinates><panel_attributes>*Microsoft Teams Webhook*
+Get alerts 
+fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>472</y><w>192</w><h>48</h></coordinates><panel_attributes>send alerts to 
+fontsize=20
+lt=&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>220;30;10;30</additional_attributes></element></diagram>

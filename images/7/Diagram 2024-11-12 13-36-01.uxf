@@ -1,0 +1,38 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLPackage</id><coordinates><x>81</x><y>126</y><w>927</w><h>612</h></coordinates><panel_attributes>*Docker server*
+--
+bg=white
+fontsize=25
+lw=3
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>99</x><y>180</y><w>891</w><h>531</h></coordinates><panel_attributes>/*docker private network*/
+192.168.11.0/24
+halign=left
+valign=bottom
+fontsize=19
+lt=..
+fg=#2487ab
+lw=4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>198</x><y>252</y><w>234</w><h>135</h></coordinates><panel_attributes>*Container*
+prometheus Running
+ip: 192.168.11.2
+*NOT EXPOSE PORT*
+lw=3
+fontsize=19
+fg=#5a24ab</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>198</x><y>477</y><w>234</w><h>135</h></coordinates><panel_attributes>*Container*
+microservice client
+ip: 192.168.11.2
+*PORT EXPOSED: 8084*
+lw=3
+fontsize=19
+fg=#5a24ab</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>306</x><y>378</y><w>81</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-&gt;&gt;&gt;
+*send data*
+lw=2</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>648</x><y>252</y><w>234</w><h>135</h></coordinates><panel_attributes>*Container*
+Grafana Running
+ip: 192.168.11.5
+*PORT EXPOSED: 3000*
+/*SSL certificate*/
+lw=3
+fontsize=19
+fg=#5a24ab</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>423</x><y>297</y><w>243</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-&gt;&gt;&gt;
+*send data*
+lw=2</panel_attributes><additional_attributes>250;20;10;20</additional_attributes></element></diagram>
