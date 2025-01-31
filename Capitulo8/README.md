@@ -1,13 +1,16 @@
-# 8. Implementación de Loki con microservicio
+# Práctica 8. Implementación de Loki con microservicio
 En este laboratorio se espera que el alumno pueda integrar un microservicio
 en **spring-boot** con **Loki, promtail y grafana**
 
 ## Objetivos
-- Implementar la configuración del microservicio
-- Implementar la configuración de promtail
-- Crear la configuración de loki
-- Configurar loki como datasource en grafana
+- Implementar la configuración del microservicio.
+- Implementar la configuración de promtail.
+- Crear la configuración de Loki.
+- Configurar Loki como datasource en Grafana.
 
+## Duración aproximado:
+- 60 minutos.
+  
 ---
 
 <div style="width: 400px;">
@@ -50,9 +53,9 @@ Este laboratorio esta dividido en la siguientes secciones:
 
 
 ## Configuración microservicio cliente [return](#instrucciones)
-> **IMPORTANTE:** La imagen de docker **edgardovefe/pgclase:microclientloki** ya tiene las configuraciones expuestas en esta sección. Pero es importante saber que es lo que se debe de cambiar para que **loki** funcione. 
+> **IMPORTANTE:** La imagen de docker **edgardovefe/pgclase:microclientloki** ya tiene las configuraciones expuestas en esta sección. Pero es importante saber que es lo que se debe de cambiar para que **Loki** funcione. 
 
-1. Añadir la siguientes dependencias en el microservicio cliente en el archivo **pom.xml**
+1. Añadir la siguientes dependencias en el microservicio cliente en el archivo **pom.xml**.
 
 ```xml
 <!--loki dependency-->
@@ -108,12 +111,12 @@ los logs de la aplicación.
 con un formato personalizado. 
 
 
-3. Guardar el microservicio y generar de nuevo la imagen de docker
+3. Guardar el microservicio y generar de nuevo la imagen de docker.
 
-## Archivo Configuración LOKI [return](#instrucciones)
-1. En el escritorio crearemos una carpeta que llamaremos **loki**
-2. En la carpeta **loki** crearemos un archivo que llamaremos **loki-config.yml**
-3. En el archivo añadiremos el siguiente contenido:
+## Archivo configuración Loki [return](#instrucciones)
+1. En el escritorio crear una carpeta que llamaremos **loki**.
+2. En la carpeta **loki** crear un archivo que llamaremos **loki-config.yml**.
+3. En el archivo añadir el siguiente contenido:
 
 ```yaml
 auth_enabled: false
@@ -145,9 +148,9 @@ storage_config:
 ```
 
 > **NOTA:** La configuración anterior indica que loki almacenará
-los logs en memoria y creará un índice cada 24 horas
+los logs en memoria y creará un índice cada 24 horas.
 
-4. Guardar el archivo y obtener su ruta absoluta
+4. Guardar el archivo y obtener su ruta absoluta.
 
 ```bash
 C:\Users\egar2\Escritorio\loki\loki-config.yml
@@ -156,9 +159,9 @@ C:\Users\egar2\Escritorio\loki\loki-config.yml
 
 ## Archivo Configuración promtail [return](#instrucciones)
 1. En la carpeta **loki** que se encuentra en el escritorio
-crearemos un nuevo archivo que llamaremos **promtail.yml**
+crear un nuevo archivo que llamaremos **promtail.yml**.
 
-2. En el archivo **promtail-config.yml** añadiremos el siguiente contenido:
+2. En el archivo **promtail-config.yml** añadir el siguiente contenido:
 
 ```yaml
 server:
@@ -183,7 +186,7 @@ scrape_configs:
 
 > **NOTA:** El archivo de configuración permite obtener los logs 
 del microservicio cliente y enviarlos a **loki**
-**promtail** funciona como un intermediario ya que **loki** no puede 
+**promtail** funciona como un intermediario ya que **Loki** no puede 
 obtener directamente los **logs**
 
 3. Guardar el archivo y obtener su ruta absoluta:
@@ -199,9 +202,9 @@ tengas los siguientes archivos:
 
 ![carpeta loki](../images/8/1.png)
 
-2. Dentro de la carpeta **loki** crear un nuevo archivo que llamaremos **docker-compose.yaml**
+2. Dentro de la carpeta **loki**, crear un nuevo archivo que llamaremos **docker-compose.yaml**
 
-3. En el archivo **docker-compose.yaml** añadiremos el siguiente contenido:
+3. En el archivo **docker-compose.yaml** añadir el siguiente contenido:
 
 ```yaml
 services:
@@ -248,7 +251,7 @@ services:
 ```
 > **IMPORTANTE:** En el archivo compose buscar **<path_loki_config> y <path_promtail_config>** y sustituirlo con las rutas de los archivos de configuración de **loki y promtail** 
 
-4. Guardar el archivo **docker-compose.yaml**
+4. Guardar el archivo **docker-compose.yaml**.
 
 5. Abrir una terminal y ejecutar el siguiente comando:
 
@@ -270,29 +273,29 @@ docker ps
 
 
 
-## Resultado Esperado [instrucciones](#instrucciones)
+## Resultado esperado [instrucciones](#instrucciones)
 
-1. Si todo se ha inicializado bien abrir el dashboard de grafana (http://localhost:3000)
+1. Si todo se ha inicializado bien abrir el dashboard de Grafana (http://localhost:3000).
 
-2. Iniciar sesión al dashboard de grafana:
+2. Iniciar sesión al dashboard de Grafana:
 - **username**: admin
 - **password**: pass
 
-3. Conectar una nueva fuente de datos **Connections->Data Sources->Add data source**
+3. Conectar una nueva fuente de datos **Connections->Data Sources->Add data source**.
 
 ![datasource](../images/8/4.png)
 
-4. Agregar a **loki** con la siguiente dirección: http://loki:3100
+4. Agregarla a **Loki** con la siguiente dirección: http://loki:3100
 
 ![loki](../images/8/5.png)
 
-5. Salvamos la nueva conexión
+5. Salvar la nueva conexión.
 
-6. En **Grafana** pulsamos **Explore**
+6. En **Grafana** pulsar **Explore**.
 
-7. Selecciona el datasource **loki**
+7. Seleccionar el datasource **loki**.
 
-8. En el query ejecutamos la siguiente consulta:
+8. En el query ejecutar la siguiente consulta:
 
 ```bash
 {app="micro-client"}
