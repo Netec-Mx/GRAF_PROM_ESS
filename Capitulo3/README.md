@@ -1,12 +1,14 @@
-# 3. Consultas promql de las métricas de un microservicio 
+# Práctica 3. Consultas promql de las métricas de un microservicio 
 Se espera que el alumno aprenda a conectar un microservicio a prometheus y realice consultas usando promql. 
 
 ## Objetivos
-- Levantar un microservicio usando docker
-- Conectar el microservicio a prometheus
-- Realizar consultas de las métricas usando promql
+- Levantar un microservicio usando docker.
+- Conectar el microservicio a Prometheus.
+- Realizar consultas de las métricas usando promql.
 
-
+## Duración aproximada:
+- 60 minutos.
+  
 ---
 
 <div style="width: 400px;">
@@ -132,7 +134,7 @@ curl -L 'http://localhost:8084/client/id?id=1'
 
 1. Para configurar prometheus el **microservicio cliente** debe de estar iniciado, en el caso que no sea así, regresa a la sección anterior. 
 
-2. En el escritorio crear un archivo que llamaremos **prometheus.yml**
+2. En el escritorio crear un archivo que llamaremos **prometheus.yml**.
 
 3. En el archivo **prometheus.yml** añadiremos el siguiente contenido:
 
@@ -177,7 +179,7 @@ docker ps
 ![portal prometheus](../images/3/4.png)
 
 
-8. En el portal de prometheus abrir **Status-> Target Health** y validar que nuestro microservicio este conectado: 
+8. En el portal de Prometheus abrir **Status-> Target Health** y validar que nuestro microservicio este conectado: 
 
 ![microservice](../images/3/5.png)
 
@@ -192,7 +194,7 @@ http_server_requests_seconds_count{method="POST", status="201"}
 ![post](../images/3/6.png)
 
 
-2. Cantidad de veces donde no se ha encontrado a un cliente al buscar por id.
+2. Mostrar la cantidad de veces donde no se ha encontrado a un cliente al buscar por id.
 
 ```bash
 http_server_requests_seconds_count{method="GET", uri="/client/id", status="404"}
@@ -203,7 +205,7 @@ http_server_requests_seconds_count{method="GET", uri="/client/id", status="404"}
 
 
 
-3. Muestrame la operación más lenta de los últimos 5 minutos:
+3. Mostrar la operación más lenta de los últimos 5 minutos:
 
 ```bash
 topk(1,max by (uri, method) (max_over_time(http_server_requests_seconds_max[5m])))
@@ -212,7 +214,7 @@ topk(1,max by (uri, method) (max_over_time(http_server_requests_seconds_max[5m])
 
 
 
-4. Mostrar la operación más ejecutada del microservicio en los últimos 30 min
+4. Mostrar la operación más ejecutada del microservicio en los últimos 30 min:
 
 
 ```bash
@@ -230,7 +232,7 @@ topk(1,sum(increase(http_server_requests_seconds_count[30m])) by (uri, method))
 ## Resultado esperado [Instrucciones](#instrucciones)
 
 
-En el panel de prometheus debería de tener varias consultas, y se vería de la siguiente forma: 
+En el panel de Prometheus debería de tener varias consultas, y se vería de la siguiente forma: 
 
 ![result](../images/3/10.png)
 
