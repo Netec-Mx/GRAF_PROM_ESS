@@ -1,13 +1,16 @@
-# 5. Crear alertas de un microservicio en Grafana
+# Práctica 5. Crear alertas de un microservicio en Grafana
 Se necesita crear una alerta que le avise al equipo cuando un microservicio se ha caido. 
 
 ## Objetivos
-- Observar las opciones de alertas que tiene grafana
-- Conectar grafana a un webhook 
-- Configurar un punto de conexión
-- Crear un template personalizado de alertas
-- Activar una alerta
+- Observar las opciones de alertas que tiene Grafana.
+- Conectar grafana a un webhook. 
+- Configurar un punto de conexión.
+- Crear un template personalizado de alertas.
+- Activar una alerta.
 
+## Duración aproximada:
+- 60 minutos.
+  
 ---
 <div style="width: 400px;">
         <table width="50%">
@@ -59,27 +62,27 @@ Este laboratorio esta separado las siguientes  secciones.
 
     ![info canal](../images/5/2.png)
 
-4. Ahora en el canal **Administración del canal-> Configuración -> Conectores** 
+4. Ahora en el canal **Administración del canal-> Configuración -> Conectores**. 
 
     ![alt text](../images/5/3.png)
 
-5. Dentro de conectores buscar **Incoming Webhook** este conector va a permitir que grafana pueda enviar alertas al canal de teams
+5. Dentro de conectores buscar **Incoming Webhook** este conector va a permitir que grafana pueda enviar alertas al canal de teams.
 
     ![webhook](../images/5/4.png)
 
-6. Cambiar del webhook el **nombre** y la **imagen**
+6. Cambiar del webhook el **nombre** y la **imagen**.
 
     ![data webhook](../images/5/5.png)
 
-7. Al crear el **webhook** nos va a generar un url **Copiamos y guardamos el url webhook**
+7. Al crear el **webhook** nos va a generar un URL **Copiamos y guardamos el url webhook**.
 
     ![webhook](../images/5/6.png)
 
-8. Guarde el url **Webhook url** lo usaremos en la sección de grafana
+8. Guarde el URL **Webhook url** lo usaremos en la sección de Grafana.
 
 ## Conexión teams con Grafana [return](#instrucciones)
 
-1. En el menu de grafana buscaremos la opción **Alerting->Contact points**
+1. En el menú de Grafana buscaremos la opción **Alerting->Contact points**.
 
     ![points](../images/5/7.png)
 
@@ -96,7 +99,7 @@ Este laboratorio esta separado las siguientes  secciones.
 
 ## Creación de template [return](#instrucciones)
 
-1. Abrir el **contact point** creado
+1. Abrir el **contact point** creado.
 2. Abrir las opciones **Optional Microsoft Teams settings** y configurar:
 - **Title**: Grafana alerta
 - **Message**: Añadir el siguiente código:
@@ -124,9 +127,9 @@ Este laboratorio esta separado las siguientes  secciones.
 
 
 
-## Crear alerta de grafana [return](#instrucciones)
+## Crear alerta de Grafana [return](#instrucciones)
 
-1. Ahora en el menú de grafana abrir **Alert rules**
+1. Ahora en el menú de Grafana abrir **Alert rules**.
 
     ![grafana](../images/5/10.png)
 
@@ -164,9 +167,9 @@ up{job="spring-application"}
 4. Esperar un poco hasta que la alerta se active. 
 
 
-## Resultado Esperado [Instrucciones](#instrucciones)
+## Resultado esperado [Instrucciones](#instrucciones)
 
-1. Para probar la alerta es necesario prender y apagar el microservicio cliente
+1. Para probar la alerta es necesario prender y apagar el microservicio cliente.
 
 ```bash
 #----apagar contenedor----
