@@ -3,9 +3,9 @@
 En este laboratorio se busca que el alumno pueda investigar la popularidad de Prometheus y Grafana en el mundo. 
 
 ## Objetivos:
-- Investigar el uso de prometheus en el mundo
-- Investigar el uso de grafana en el mundo
-- Comparar las herramientas con otras
+- Investigar el uso de Prometheus en el mundo.
+- Investigar el uso de Grafana en el mundo.
+- Comparar las herramientas con otras.
 
 ## Duración aproximada:
 - 30 minutos.
