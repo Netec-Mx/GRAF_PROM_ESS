@@ -1,12 +1,12 @@
-# 4. Dashboard de aplicación web
+# Práctica 4. Dashboard de aplicación web
 
 Se necesita que el alumno ayude a crear un panel de monitoreo para el microservicio desplegado en el laboratorio [(Capítulo 3)](../Capitulo3/) anterior.
 
 ## Objetivos
-- Conectar prometheus con grafana
-- Realizar consultas para extraer información de prometheus
+- Conectar Prometheus con Grafana.
+- Realizar consultas para extraer información de Prometheus.
 - Usar las visualizaciones de grafana para representar información de la aplicación. 
-- Configurar un panel de monitoreo
+- Configurar un panel de monitoreo.
 
 ---
 
@@ -34,7 +34,7 @@ Se necesita que el alumno ayude a crear un panel de monitoreo para el microservi
 
 ![diagrama](../images/4/diagrama.png)
 
->**IMPORTANTE**: Para este laboratorio usaremos la conexión de prometheus con el microservicio cliente, en el caso de NO tenerlo, **realizar el laboratorio anterior [Capítulo3](../Capitulo3/)**
+>**IMPORTANTE**: Para este laboratorio usaremos la conexión de prometheus con el microservicio cliente, en el caso de NO tenerlo, **realizar el laboratorio anterior [Capítulo3](../Capitulo3/)**.
 
 
 ## Instrucciones
@@ -52,10 +52,10 @@ Este lab esta separado por las siguientes secciones:
 
 - **[Crear visualización "Logs totales"](#crear-visualización-logs-totales-return)**
 
-## Configurar prometheus con grafana [return](#instrucciones)
-1. Para esta primera parte es necesario tener conectado el microservicio cliente con prometheus, en el caso de no tenerlo **REALIZAR PRÁCTICA 3**
+## Configurar Prometheus con Grafana [return](#instrucciones)
+1. Para esta primera parte es necesario tener conectado el microservicio cliente con Prometheus, en el caso de no tenerlo **REALIZAR PRÁCTICA 3**.
 
-2. Crear un contenedor de grafana en docker con el siguiente comando:
+2. Crear un contenedor de Grafana en docker con el siguiente comando:
 > **NOTA:** Si ya tienes un contenedor con grafana sólo tienes que iniciarlo con el comando **docker start namecontainer**
 
 ```bash
@@ -67,16 +67,16 @@ y contraseña, **user:admin, password:pass**
 
     ![login grafana](../images/4/1.png)
 
-4. Abrir la barra de navegación abrir **Connections -> Data sources** 
+4. Abrir la barra de navegación abrir **Connections -> Data sources**. 
 
     ![datasource](../images/4/2.png)
 
 
-5. Ahora **add Datasources** selecciona **prometheus** y en **connection** añadir la siguiente dirección **http://host.docker.internal:9090** es la dirección del contenedor de prometheus:
+5. Ahora **add Datasources** selecciona **prometheus** y en **connection** añadir la siguiente dirección **http://host.docker.internal:9090** es la dirección del contenedor de Prometheus:
 
     ![prometheus](../images/4/3.png)
 
-6. Salva la conexión **Save & test**
+6. Salvar la conexión **Save & test**.
 
     ![saveandtest](../images/4/4.png)
 
@@ -84,21 +84,21 @@ y contraseña, **user:admin, password:pass**
 
 ## Crear panel de monitoreo [return](#instrucciones)
 
-1. En la barra de navegación de grafana selecciona **dashboards**
+1. En la barra de navegación de Grafana selecciona **dashboards**.
 
     ![dashboards](../images/4/5.png)
 
-2. Ahora **New-> new dashboard**
+2. Ahora **New-> new dashboard**.
 
-3. En **Settings** del **dashboard** configura el nombre **Microservicio cliente** -> **Save dashboard**
+3. En **Settings** del **dashboard** configurar el nombre **Microservicio cliente** -> **Save dashboard**.
 
     ![serviceclient](../images/4/6.png)
 
 
 ## Crear visualización "Estado del microservicio" [return](#instrucciones)
-1. Dentro del dashboard **Microservicio cliente** selecciona **Add Visualization**
+1. Dentro del dashboard **Microservicio cliente** seleccionar **Add Visualization**.
 
-2. Selecciona el **data source prometheus**
+2. Seleccionar el **data source prometheus**.
 
 3. En la sección de queries añade la siguiente consulta: 
 
@@ -109,20 +109,20 @@ up{job="spring-application"}
 
 ![promql](../images/4/7.png)
 
-4. Cambiar el tipo de gráfico a **stat** 
+4. Cambiar el tipo de gráfico a **stat**. 
 
     ![grafico](../images/4/8.png)
 
-5. En las opciones del gráfico cambiar el nombre a **Estado del microservicio**
+5. En las opciones del gráfico cambiar el nombre a **Estado del microservicio**.
 
 >**NOTA:** Si observamos, hasta el momento sólo vemos un gráfico con el número **1**
 ![pa](../images/4/9.png)
 
-6. Agregar **Value mappings**  dentro de la configuración del gráfico: 
+6. Agregar **Value mappings** dentro de la configuración del gráfico: 
 
     ![mappings](../images/4/10.png)
 
-7. **Salva el dashboard** y acomoda tu visualización al tamaño que prefieras
+7. **Salvar el dashboard** y acomodar la visualización al tamaño que prefieras.
 
     ![dashboard1](../images/4/11.png)
 
@@ -132,7 +132,7 @@ up{job="spring-application"}
 
 ## Crear visualización "Tasa de éxito en los últimos 30 min" [return](#instrucciones)
 
-1. En el dashboard Microservicio Cliente agregar una nueva visualización **Add->Visualization**
+1. En el dashboard Microservicio Cliente agregar una nueva visualización **Add->Visualization**.
 
 2. En la sección de queries añadir la siguiente consulta:
 
@@ -141,7 +141,7 @@ up{job="spring-application"}
 ```
 > **NOTA:** En la consulta anterior nos entrega el porcentaje de éxito de las operaciones del microservicio de los últimos 30 minutos.
 
-3. En las opciones del query añadir el tag **Códigos 2XX** 
+3. En las opciones del query añadir el tag **Códigos 2XX**. 
 
     ![200codes](../images/4/12.png)
 
@@ -154,9 +154,9 @@ up{job="spring-application"}
     ![dashboard2](../images/4/13.png)
 
 ## Crear visualización "Tasa de fallo en los últimos 30 min" [return](#instrucciones)
-1. Dentro del dashboard **Microservicio Cliente** Añadir una nueva visualización **Add->Visualization**
+1. Dentro del dashboard **Microservicio Cliente**, añadir una nueva visualización **Add->Visualization**.
 
-2. Añadir la siguiente consulta **promql** en la sección de **query**
+2. Añadir la siguiente consulta **promql** en la sección de **query**.
 
 ```bash
 100 * sum(rate(http_server_requests_seconds_count{job="spring-application", status=~"4..|5.."}[30m])) / sum(rate(http_server_requests_seconds_count{job="spring-application"}[30m]))
@@ -164,11 +164,11 @@ up{job="spring-application"}
 
 > **NOTA:** La consulta anterior me retorna el porcentajes de fallas de los últimos 30 minutos del microservicio cliente.
 
-3. En las opciones de la consulta añadir la etiqueta **Códigos 4XX y 5XX**
+3. En las opciones de la consulta añadir la etiqueta **Códigos 4XX y 5XX**.
 
     ![errores](../images/4/14.png)
 
-4. Seleccionar el tipo de gráfico **Time Series**
+4. Seleccionar el tipo de gráfico **Time Series**.
 
 5. En las opciones del Gráfico modificar las siguientes opciones:
 - **Title:** Tasa de fallo en los últimos 30 min
@@ -182,7 +182,7 @@ up{job="spring-application"}
 
 
 ## Crear visualización "Logs totales" [return](#instrucciones)
-1. Dentro del dashboard **Microservicio cliente** añadir una nueva visualización **Add -> visualization**
+1. Dentro del dashboard **Microservicio cliente** añadir una nueva visualización **Add -> visualization**.
 
 2. En la sección de **Query** añadir la siguiente consulta **promql**:
 
@@ -190,9 +190,9 @@ up{job="spring-application"}
 sum  by (level) (logback_events_total{job="spring-application"})
 ```
 
-> **NOTA:** La consulta anterior nos agrupa por nivel los logs generados por el microservicio
+> **NOTA:** La consulta anterior nos agrupa por nivel los logs generados por el microservicio.
 
-3. Cambiar el tipo de gráfico a  **Bar gauge**
+3. Cambiar el tipo de gráfico a  **Bar gauge**.
 
 4. Dentro de las configuraciones del gráfico modificar:
 - **Title:** Logs totales
@@ -204,7 +204,7 @@ sum  by (level) (logback_events_total{job="spring-application"})
 
     ![dashboard4](../images/4/16.png)
 
-## Resultado Esperado 
+## Resultado esperado 
 Cuando finalize el laboratorio se espera que el alumno tenga un dashboard para su microservicio cliente. 
 
 ![final](../images/4/17.png)
