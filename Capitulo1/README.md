@@ -1,13 +1,15 @@
-# 1. Comparación de herramientas
+# 1. Práctica 1. Comparación de herramientas
 
-En este laboratorio se busca que el alumno pueda investigar la popularidad de prometheus y grafana en el mundo. 
+En este laboratorio se busca que el alumno pueda investigar la popularidad de Prometheus y Grafana en el mundo. 
 
-
-## Objetivos
+## Objetivos:
 - Investigar el uso de prometheus en el mundo
 - Investigar el uso de grafana en el mundo
 - Comparar las herramientas con otras
 
+## Duración aproximada:
+- 30 minutos.
+  
 ---
 <!--Este fragmento es la barra de 
 navegación-->
@@ -34,7 +36,7 @@ navegación-->
 
 ## Diagrama 
 
-Se espera que el alumno realice una investigación usando Google Trends 
+Se espera que el alumno realice una investigación usando Google Trends. 
 
 ![diagrama](../images/1/diagrama.png)
 
@@ -44,7 +46,7 @@ Se espera que el alumno realice una investigación usando Google Trends
 
 1. Abrir un explorador web **Google Chrome**, **Safari**, **Edge**, o el de su preferencia.
 
-2. Abrir el siguiente url: https://trends.google.com/trends/
+2. Abrir el siguiente URL: https://trends.google.com/trends/
 
  ![google trends](../images/1/1.png)
 
@@ -56,23 +58,23 @@ Se espera que el alumno realice una investigación usando Google Trends
 4.  Por defecto mostrará las tendencias del día anterior y de la región actual. 
 
 
-5. Modificar la región a **todo el mundo** y **Últimos 12 meses**
+5. Modificar la región a **todo el mundo** y **Últimos 12 meses**.
 
 ![tendencias](../images/1/3.png)
 
 
-6. Analizar los resultados y observar en que paises es tendencia prometheus
+6. Analizar los resultados y observar en que paises es tendencia Prometheus.
 
 ![paises](../images/1/4.png)
 
 
-7. Compara con Grafana 
+7. Comparar con Grafana. 
 
 ![grafana](../images/1/5.png)
 
 > **Nota**: *A pesar que podemos observar diferencias a nivel tendencias, **recuerda que cada herramienta se usa en escenarios diferentes***
 
-8. En la comparativa agrega otras herramientas de minotoreo que conozcas y comparalas. 
+8. En la comparativa, agregar otras herramientas de monitoreo que conozcas y comparalas. 
 
 
 # Resultado esperado
