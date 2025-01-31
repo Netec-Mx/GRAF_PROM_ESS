@@ -1,0 +1,49 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLPackage</id><coordinates><x>50</x><y>30</y><w>950</w><h>600</h></coordinates><panel_attributes>*Docker server*
+--
+bg=white
+lt=-
+lw=4
+fontsize=19
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>80</y><w>900</w><h>530</h></coordinates><panel_attributes>/*docker network*/
+valign=bottom
+halign=left
+fontsize=15
+fg=#327fa8
+lw=3
+lt=.</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>380</y><w>210</w><h>110</h></coordinates><panel_attributes>*Container*
+--
+halign=center
+microservice client 
+Loki configured
+--
+PORT EXPOSED: 8085
+fg=#b55118
+fontsize=15
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>200</y><w>210</w><h>90</h></coordinates><panel_attributes>*Container*
+--
+halign=center
+promtail running
+--
+NOT PORTS EXPOSED
+fg=#0b6e3c
+fontsize=15
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>280</y><w>90</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+scrape logs</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>620</x><y>200</y><w>210</w><h>90</h></coordinates><panel_attributes>*Container*
+--
+halign=center
+loki running
+--
+PORT EXPOSED:3100
+fg=#0b2a6e
+fontsize=15
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>230</y><w>280</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+send logs in memory storage</panel_attributes><additional_attributes>260;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>620</x><y>380</y><w>210</w><h>90</h></coordinates><panel_attributes>*Container*
+--
+halign=center
+Grafana running
+--
+PORT EXPOSED:3000
+fg=#945010
+fontsize=15
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>280</y><w>90</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+datasource</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element></diagram>

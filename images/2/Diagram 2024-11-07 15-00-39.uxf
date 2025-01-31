@@ -1,0 +1,18 @@
+<diagram program="umletino" version="15.1"><zoom_level>5</zoom_level><element><id>UMLPackage</id><coordinates><x>25</x><y>45</y><w>740</w><h>495</h></coordinates><panel_attributes>*Docker network*
+*192.168.4.0/24*
+--
+bg=white
+fontsize=25
+fg=#2c6be8</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>210</y><w>270</w><h>160</h></coordinates><panel_attributes>*Prometheus container*
+Running
+
+fontsize=29
+lt=..
+fg=#8d2ce8
+port export 9090</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>415</x><y>210</y><w>270</w><h>160</h></coordinates><panel_attributes>*Grafana container*
+Running
+
+fontsize=29
+lt=..
+fg=#167d32
+port export 3000</panel_attributes><additional_attributes></additional_attributes></element></diagram>

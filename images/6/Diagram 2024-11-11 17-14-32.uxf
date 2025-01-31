@@ -1,0 +1,42 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLPackage</id><coordinates><x>99</x><y>0</y><w>972</w><h>549</h></coordinates><panel_attributes>*Docker server*
+--
+bg=white
+lw=2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>225</x><y>108</y><w>270</w><h>135</h></coordinates><panel_attributes>*CONTAINER*
+*Eureka Discovery Server*
+
+/*Registra las instancias de los microservicios*/
+
+fontsize=15
+
+bg=#1b5e59
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>126</x><y>270</y><w>225</w><h>63</h></coordinates><panel_attributes>*CONTAINER*
+*Microservice client instancia1*
+
+
+fontsize=15
+
+bg=#301d7a</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>369</x><y>270</y><w>225</w><h>63</h></coordinates><panel_attributes>*CONTAINER*
+*Microservice client instancia1*
+
+
+fontsize=15
+
+bg=#301d7a</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>261</x><y>234</y><w>54</w><h>54</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>405</x><y>234</y><w>45</w><h>54</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;30;40</additional_attributes></element><element><id>UMLClass</id><coordinates><x>711</x><y>99</y><w>270</w><h>135</h></coordinates><panel_attributes>*CONTAINER*
+*Prometheus Server*
+
+/*EUREKA SD para obtener las instancias*/
+
+fontsize=15
+
+bg=#7a381d
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>486</x><y>144</y><w>243</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+
+*Get JSON*</panel_attributes><additional_attributes>10;20;250;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>711</x><y>333</y><w>270</w><h>90</h></coordinates><panel_attributes>*CONTAINER*
+*Grafana*
+/*Prometheus connection*/
+
+fontsize=15
+
+bg=#bac22f
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>828</x><y>225</y><w>27</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>684</x><y>603</y><w>342</w><h>162</h></coordinates><panel_attributes>*Dashboard microservice client*
+fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>711</x><y>639</y><w>126</w><h>45</h></coordinates><panel_attributes>bg=#0d590f</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>864</x><y>639</y><w>126</w><h>45</h></coordinates><panel_attributes>bg=#140d59</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>711</x><y>702</y><w>126</w><h>45</h></coordinates><panel_attributes>bg=#480d59</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>864</x><y>702</y><w>126</w><h>45</h></coordinates><panel_attributes>bg=#9e115a</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>846</x><y>414</y><w>27</w><h>207</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;210;10;10</additional_attributes></element></diagram>
