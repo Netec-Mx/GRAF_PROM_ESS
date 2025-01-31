@@ -1,5 +1,5 @@
-# 2. Instalación de Prometheus y Grafana con Docker
-En este laboratorio se busca configurar a prometheus y grafana dentro de la tecnología de contenedores. 
+# Práctica 2. Instalación de Prometheus y Grafana con Docker
+En este laboratorio se busca configurar a Prometheus y Grafana dentro de la tecnología de contenedores. 
 
 
 ## Objetivos
@@ -8,6 +8,9 @@ En este laboratorio se busca configurar a prometheus y grafana dentro de la tecn
 - Usar comandos para crear un contenedor de grafana.
 - Explorar las herramientas. 
 
+## Duración aproximada
+- 30 minutos.
+  
 ---
 <div style="width: 400px;">
         <table width="50%">
@@ -40,11 +43,11 @@ En este laboratorio se busca configurar a prometheus y grafana dentro de la tecn
 
 ## Instrucciones
 
-### Configuración de prometheus en docker
+### Configuración de Prometheus en docker
 
 1. Abrir una terminal dentro de un servidor que tenga docker instalado. 
 
-2. Validar que docker este instalado con el comando 
+2. Validar que docker este instalado con el comando: 
 
 ```bash
 docker version
@@ -58,15 +61,15 @@ docker network create --subnet 192.168.4.0/24 --gateway 192.168.4.1 monitor
 ![network](../images/2/1.png)
 
 
-4. Ahora crearemos el contenedor de prometheus con el siguiente comando:
+4. Crear el contenedor de Prometheus con el siguiente comando:
 
->**Nota:** Esta primer versión de prometheus no llevará configuración adicional. 
+>**Nota:** Esta primer versión de Prometheus no llevará configuración adicional. 
 
 ```bash
 docker run -p 9090:9090 --name prometheus --network monitor -d  prom/prometheus:latest
 ```
 
->**IMPORTANTE:** Cuando se ejecute el comando por primera vez tardará un poco por la descarga de la imagen de prometheus. En el caso de error cambiar la imagen a **edgardovefe/pgclase:prometheus**
+>**IMPORTANTE:** Cuando se ejecute el comando por primera vez tardará un poco por la descarga de la imagen de Prometheus. En caso de error, cambiar la imagen a **edgardovefe/pgclase:prometheus**
 
 5. Validar que el contenedor este iniciado con el comando:
 
@@ -76,34 +79,34 @@ docker ps
 
 ![prometheus up](../images/2/2.png)
 
-6. Ahora abrir un explorador web y abrir la siguiente dirección: http://localhost:9090
+6. Abrir un explorador web y seguir la siguiente dirección: http://localhost:9090
 
 ![prometheus](../images/2/3.png)
 
->**Nota:** Al abrir la dirección localhost:9090 podrás observar el dashboard de prometheus.
+>**Nota:** Al abrir la dirección localhost:9090 podrás observar el dashboard de Prometheus.
 
-7. Abre la dirección http://localhost:9090/metrics para observar las métricas de prometheus. 
+7. Abrir la dirección http://localhost:9090/metrics para observar las métricas de Prometheus. 
 
 ![metrics](../images/2/4.png)
 
 
-8. Explora la configuración actual de prometheus **Status->Configuration**, podrás observar un archivo **yaml**: 
+8. Explorar la configuración actual de Prometheus **Status->Configuration**, podrás observar un archivo **yaml**: 
 
 ![configuration](../images/2/5.png)
 
->**Nota:** Analiza la configuración que esta por default.
+>**Nota:** Analizar la configuración que esta por default.
 
 
 
-## Configuración de grafana en docker
-1. Para configurar a grafana en docker asegurate que tengas la red **monitor en docker** puedes validar si existe con el siguiente comando:
+## Configuración de Grafana en docker
+1. Para configurar a Grafana en docker, asegurate de tener la red **monitor en docker**, puedes validar si existe con el siguiente comando:
 
 ```bash
 docker network ls
 ```
 ![network](../images/2/6.png)
 
-2. Usaremos la versión open source de grafana para las pruebas. 
+2. Usar la versión **open source** de Grafana para las pruebas. 
 
 3. Ejecutar el siguiente comando:
 
@@ -111,9 +114,9 @@ docker network ls
 docker run -p 3000:3000 --name grafana -e GF_SECURITY_ADMIN_PASSWORD=pass --network monitor -d grafana/grafana-oss:latest
 ```
 
->**Nota:** El comando anterior crear un contenedor con grafana y el password de inicio es **pass**
+>**Nota:** El comando anterior crea un contenedor con Grafana y el password de inicio es **pass**.
 
-4. Verifica que el contenedor este iniciado con el comando:
+4. Verificar que el contenedor este iniciado con el comando:
 
 ```bash
 docker ps
@@ -122,11 +125,11 @@ docker ps
 ![container grafana](../images/2/7.png)
 
 
-5. Abrir un explorador web y abrir la siguiente dirección: http://localhost:3000 
+5. Abrir un explorador web y seguir la siguiente dirección: http://localhost:3000 
 
 ![dashboard grafana](../images/2/8.png)
 
-6. Escribir el usuario y contraseña para entrar al panel de grafana:
+6. Escribir el usuario y contraseña para entrar al panel de Grafana:
 - **user**: admin
 - **password**: pass
 
@@ -135,7 +138,7 @@ docker ps
 
 ## Resultado esperado
 
-Se espera que el alumno tenga las 2 plataformas iniciadas, tanto prometheus como grafana. 
+Se espera que el alumno tenga las 2 plataformas iniciadas, tanto Prometheus como Grafana. 
 
 ## Prometheus
 ![prometheus](../images/2/10.png)
