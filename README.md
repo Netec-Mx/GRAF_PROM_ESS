@@ -27,11 +27,11 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
 
  - [Práctica 4. Dashboard de aplicación web.](./Capitulo4/README.md)
    - **Descripción**:  Usando Grafana y sus diferentes visualizaciones el alumno debe de ser capaz de crear un dashboard de monitoreo general de un microservicio.
-   - ⏱️ **Duración estimada**:  90 minutos.
+   - ⏱️ **Duración estimada**:  60 minutos.
 
  - [Práctica 5. Crear alertas de un microservicio en Grafana.](./Capitulo5/README.md)
    - **Descripción**:  Realizar la implementación de las opciones de alertas de Grafana.
-   - ⏱️ **Duración estimada**: 45 minutos.
+   - ⏱️ **Duración estimada**: 60 minutos.
 
  - [Práctica 6. Panel dinámico Grafana.](./Capitulo6/README.md)
    - **Descripción**:  Se espera que el alumno pueda crear un panel con opciones desplegables en Grafana.
