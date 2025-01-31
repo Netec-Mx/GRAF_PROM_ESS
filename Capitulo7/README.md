@@ -1,4 +1,4 @@
-# 7. Implementando red segura y certificado SSL para grafana
+# Práctica 7. Implementando red segura y certificado SSL para Grafana
 
 Se espera que el alumno implemente una red segura con un certificado SSL para cifrar la información de grafana.  
 
@@ -8,6 +8,9 @@ Se espera que el alumno implemente una red segura con un certificado SSL para ci
 - Configurar un **docker compose** para el inicio de los contenedores.
 - Validar el certificado **SSL** para grafana
 
+## Duración aproximada:
+- 60 minutos.
+  
 ---
 
 <div style="width: 400px;">
@@ -50,31 +53,31 @@ Este laboratorio esta dividido en las siguientes secciones:
 
 ## Crear certificado SSL autofirmado [return](#instrucciones)
 
-1. Crear una carpeta en el escritorio que llamaremos **seguridad**
+1. Crear una carpeta en el escritorio a la que llamaremos **seguridad**.
 2. Dentro de la carpeta seguridad crear otra subcarpeta que llamaremos **certificado**.
 
 ![carpetas](../images/7/1.png)
 
-3. Abrimos una terminal dentro de la carpeta certificado
+3. Abrir una terminal dentro de la carpeta certificado.
 
-4. Crearemos una llave primaria para el **CA**
+4. Crear una llave primaria para el **CA**.
 
 ```bash
 openssl genrsa -aes256 -out ca.key  4096
 ```
-> **NOTA:** Al ejecutar el comando nos solicitará la **PEM pass phrase** escribir: **1234** (Guárdala, la usaremos después)
+> **NOTA:** Al ejecutar el comando nos solicitará la **PEM pass phrase** escribir: **1234** (Guárdala, la usaremos después).
 
-5. Crearemos un certificado para el **CA**
+5. Crear un certificado para el **CA**.
 
 ```bash
 openssl req -x509 -new -nodes -key ca.key  -sha256 -days 1826 -out ca.crt
 ```
 
-> **NOTA:** Al ejecutar este comando nos pedirá la **PEM pass phrase** (1234), y la información para el CA, país, ciudad, empresa...etc
+> **NOTA:** Al ejecutar este comando nos pedirá la **PEM pass phrase** (1234), y la información para el CA, país, ciudad, empresa...etc.
 
 ![data](../images/7/2.png)
 
-6. Ahora crearemos una **solicitud de firma de certificado y una llave** que usaremos en grafana
+6. Crear una **solicitud de firma de certificado y una llave** que usaremos en Grafana.
 
 ```bash
 openssl req -new -nodes -out certificado.csr -newkey rsa:4096 -keyout certificado.key
@@ -84,7 +87,7 @@ openssl req -new -nodes -out certificado.csr -newkey rsa:4096 -keyout certificad
 ![csr](../images/7/3.png)
 
 
-7. En la carpeta **certificado** crear un archivo de configuración que llamaremos **certificado.v3.ext** con la siguiente información: 
+7. En la carpeta **certificado**, crear un archivo de configuración que llamaremos **certificado.v3.ext** con la siguiente información: 
 
 ```bash
 authorityKeyIdentifier=keyid,issuer
@@ -98,9 +101,9 @@ IP.1 = 192.168.11.5 #ip privada grafana
 IP.2 = 127.0.0.1
 ```
 
-> **NOTA:** El archivo certificado.v3.ext, se usa para indicar los permisos que tendra el certificado, es decir, para que será usado, en este caso se usará para **firma digital**
+> **NOTA:** El archivo certificado.v3.ext, se usa para indicar los permisos que tendra el certificado, es decir, para que será usado, en este caso se usará para **firma digital**.
 
-8. Realizaremos el autofirmado de nuestro certificado usando nuestro **CA**, **CA private key** y el archivo **certificado.v3.ext** usando el siguiente comando:
+8. Realizar el autofirmado de nuestro certificado usando nuestro **CA**, **CA private key** y el archivo **certificado.v3.ext** usando el siguiente comando:
 
 ```bash
 openssl x509 -req -in certificado.csr -CA ca.crt  -CAkey ca.key -CAcreateserial -out certificado.crt -days 730 -sha256 -extfile certificado.v3.ext
@@ -114,11 +117,11 @@ openssl x509 -req -in certificado.csr -CA ca.crt  -CAkey ca.key -CAcreateserial 
 
 10. Copiar los archivos **certificado.crt** y **certificado.key**.
 
-11. En la carpeta **seguridad** crear una nueva carpeta que llamaremos **volumen** y pegaremos los archivo **certificado.crt** y **certificado.key**
+11. En la carpeta **seguridad**, crear una nueva carpeta que llamaremos **volumen**. Pegar los archivos **certificado.crt** y **certificado.key**
 
 ![certificado y llave](../images/7/5.png)
 
-12. Copiar la ruta absoluta de la carpeta **volumen**, la usaremos después
+12. Copiar la ruta absoluta de la carpeta **volumen**, la usaremos después.
 
 ```bash
 C:\Users\egar2\Escritorio\seguridad\volumen
@@ -126,9 +129,9 @@ C:\Users\egar2\Escritorio\seguridad\volumen
 
 
 ## Archivo de configuración prometheus [return](#instrucciones)
-1. Dentro de la carpeta **seguridad** crearemos una archivo que llamaremos **prometheus.yaml**.
+1. Dentro de la carpeta **seguridad** crear un archivo que llamaremos **prometheus.yaml**.
 
-2. Añadiremos el siguiente contenido al archivo **prometheus.yaml**
+2. Añadir el siguiente contenido al archivo **prometheus.yaml**.
 
 ```yaml
 scrape_configs:
@@ -139,7 +142,7 @@ scrape_configs:
       - targets: ['client:8084']
 ```
 
-3. Guardar el archivo y obtener su ruta absoluta
+3. Guardar el archivo y obtener su ruta absoluta.
 
 ```bash
 C:\Users\egar2\Escritorio\seguridad\prometheus.yaml
@@ -149,9 +152,9 @@ C:\Users\egar2\Escritorio\seguridad\prometheus.yaml
 
 ## Archivo de configuración grafana [return](#instrucciones)
 
-1. En la carpeta **seguridad** crearemos un archivo que llamaremos **grafana.ini**
+1. En la carpeta **seguridad** crear un archivo que llamaremos **grafana.ini**.
 
-2. En el archivo **grafana.ini** añadiremos el siguiente contenido: 
+2. En el archivo **grafana.ini** añadir el siguiente contenido: 
 
 ```ini
 [server]
@@ -180,9 +183,9 @@ C:\Users\egar2\Escritorio\seguridad\grafana.ini
 
 ![estructura](../images/7/6.png)
 
-2. En la carpeta **seguridad** crearemos un archivo que llamaremos **docker-compose.yaml**
+2. En la carpeta **seguridad** crear un archivo que llamaremos **docker-compose.yaml**.
 
-3. Añadimos el siguiente contenido al archivo **docker-compose.yaml**
+3. Añadir el siguiente contenido al archivo **docker-compose.yaml**.
 
 ```yaml
 services:
@@ -236,15 +239,15 @@ networks:
 
 > **IMPORTANTE:** Sustituir **<path_prometheus>, <path_grafana>, <path_certificados>** por las rutas copiadas en las secciones anteriores. 
 
-4. Abrir una terminal en la ruta donde se encuentra el **docker-compose.yaml** 
+4. Abrir una terminal en la ruta donde se encuentra el **docker-compose.yaml**. 
 
-5. Ejecutar el siguiente comando para levantar los contenedores del compose.
+5. Ejecutar el siguiente comando para levantar los contenedores del compose:
 
 ```bash
 docker-compose up -d
 ```
 
-6. Cuando el comando termine de ejecutarse, debería de observar lo siguiente.
+6. Cuando el comando termine de ejecutarse, debería de observar lo siguiente:
 
 
 ![containers_up](../images/7/7.png)
@@ -252,15 +255,15 @@ docker-compose up -d
 
 
 ## Resultado esperado [Instrucciones](#instrucciones)
-Si todos los pasos se han realizado correctamente debería de poder entrar a grafana con la dirección **https://localhost:3000**
+Si todos los pasos se han realizado correctamente debería de poder entrar a Grafana con la dirección **https://localhost:3000**
 
 ![resultado](../images/7/8.png)
 
-2. **(opcional)** Conectese a prometheus desde grafana usando la dirección **http://prometheus:9090** 
+2. **(opcional)** Conectarse a Prometheus desde Grafana usando la dirección **http://prometheus:9090**. 
 
-> **NOTA:** Al usarla dirección **http://prometheus:9090** se asegura que puedes conectarte a prometheus a través de la red privada. 
+> **NOTA:** Al usarla dirección **http://prometheus:9090** se asegura que puedes conectarte a Prometheus a través de la red privada. 
 
-3. **(opcional)** Crea una visualización usando las métricas del microservicio cliente. 
+3. **(opcional)** Crear una visualización usando las métricas del microservicio cliente. 
 
 
 ![visualización](../images/7/9.png)
