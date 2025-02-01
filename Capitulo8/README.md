@@ -1,6 +1,6 @@
 # Práctica 8. Implementación de Loki con microservicio
 En este laboratorio se espera que el alumno pueda integrar un microservicio
-en **spring-boot** con **Loki, promtail y grafana**
+en **spring-boot** con **Loki, promtail y grafana**.
 
 ## Objetivos
 - Implementar la configuración del microservicio.
@@ -249,7 +249,7 @@ services:
       loki:
         condition: service_healthy
 ```
-> **IMPORTANTE:** En el archivo compose buscar **<path_loki_config> y <path_promtail_config>** y sustituirlo con las rutas de los archivos de configuración de **loki y promtail** 
+> **IMPORTANTE:** En el archivo compose buscar **<path_loki_config> y <path_promtail_config>** y sustituirlo con las rutas de los archivos de configuración de **loki y promtail**. 
 
 4. Guardar el archivo **docker-compose.yaml**.
 
