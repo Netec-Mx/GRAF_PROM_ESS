@@ -38,7 +38,7 @@ Se espera que el alumno aprenda a conectar un microservicio a prometheus y reali
 
 
 ## Instrucciones
-Este laboratorio esta separado en la siguientes secciones:
+Este laboratorio esta separado en las siguientes secciones:
 
 - ### [Levantar microservicio cliente](#levantar-microservicio-return)
 - ### [Configurar prometheus](#configurar-prometheus-return)
@@ -50,7 +50,7 @@ Este laboratorio esta separado en la siguientes secciones:
 ```bash
 docker ps
 ```
-> **NOTA:** el comando anterior le muestra los contenedores iniciados, en el caso que el comando marque algún error docker no esta iniciado. 
+> **NOTA:** el comando anterior le muestra los contenedores iniciados, en caso de que el comando marque algún error, docker no esta iniciado. 
 
 2. Crear un contenedor con el microservicio cliente ejecutandose:
 
@@ -130,13 +130,13 @@ curl -L 'http://localhost:8084/client/id?id=1'
 
 
 
-## Configurar prometheus [return](#instrucciones)
+## Configurar Prometheus [return](#instrucciones)
 
-1. Para configurar prometheus el **microservicio cliente** debe de estar iniciado, en el caso que no sea así, regresa a la sección anterior. 
+1. Para configurar Prometheus el **microservicio cliente** debe de estar iniciado, en caso de que no sea así, regresa a la sección anterior. 
 
 2. En el escritorio crear un archivo que llamaremos **prometheus.yml**.
 
-3. En el archivo **prometheus.yml** añadiremos el siguiente contenido:
+3. En el archivo **prometheus.yml** añadir el siguiente contenido:
 
 ```yaml
 scrape_configs:
@@ -147,13 +147,13 @@ scrape_configs:
       - targets: ['host.docker.internal:8084']
 ```
 
-4. Ahora obtenemos la ruta absoluta de nuestro archivo **prometheus.yml** se debería de ver cómo lo siguiente:
+4. Ahora obtenemos la ruta absoluta de nuestro archivo **prometheus.yml**, se debería de ver cómo lo siguiente:
 
 ```bash
 C:\Users\egar2\Escritorio\volume\prometheus.yml
 ```
 
-5. Crear un contenedor con la configuración de prometheus cargada: 
+5. Crear un contenedor con la configuración de Prometheus cargada: 
 
 ```bash
 docker run -p 9090:9090 --name prometheus -v 'path_promethus_file:/etc/prometheus/prometheus.yml' -d prom/prometheus:latest
@@ -167,14 +167,14 @@ docker run -p 9090:9090 --name prometheus -v 'path_promethus_file:/etc/prometheu
 docker ps
 ```
 
-> **IMPORTANTE:** Para este punto del laboratorio debería de tener 2 contenedores iniciados, uno con prometheus y el otro con el microservicio
+> **IMPORTANTE:** Para este punto del laboratorio debería de tener 2 contenedores iniciados, uno con Prometheus y el otro con el microservicio.
 
 ![containers](../images/3/3.png)
 
 
 
 
-7. Abrir un explorador web y abrir el portal de **prometheus**, http://localhost:9090
+7. Abrir un explorador web y abrir el portal de **Prometheus**, http://localhost:9090
 
 ![portal prometheus](../images/3/4.png)
 
