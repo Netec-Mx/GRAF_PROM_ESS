@@ -4,8 +4,8 @@ En este laboratorio se busca configurar a Prometheus y Grafana dentro de la tecn
 
 ## Objetivos
 - Comprender la configuración de Docker.
-- Usar comandos para crear un contenedor de prometheus.
-- Usar comandos para crear un contenedor de grafana.
+- Usar comandos para crear un contenedor de Prometheus.
+- Usar comandos para crear un contenedor de Grafana.
 - Explorar las herramientas. 
 
 ## Duración aproximada
