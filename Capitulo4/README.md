@@ -56,7 +56,7 @@ Este lab esta separado por las siguientes secciones:
 1. Para esta primera parte es necesario tener conectado el microservicio cliente con Prometheus, en el caso de no tenerlo **REALIZAR PRÁCTICA 3**.
 
 2. Crear un contenedor de Grafana en docker con el siguiente comando:
-> **NOTA:** Si ya tienes un contenedor con grafana sólo tienes que iniciarlo con el comando **docker start namecontainer**
+> **NOTA:** Si ya tienes un contenedor con grafana sólo tienes que iniciarlo con el comando **docker start namecontainer**.
 
 ```bash
 docker run -p 3000:3000 --name grafana -e GF_SECURITY_ADMIN_PASSWORD=pass --network monitor -d grafana/grafana-oss:latest
@@ -115,7 +115,7 @@ up{job="spring-application"}
 
 5. En las opciones del gráfico cambiar el nombre a **Estado del microservicio**.
 
->**NOTA:** Si observamos, hasta el momento sólo vemos un gráfico con el número **1**
+>**NOTA:** Si observamos, hasta el momento sólo vemos un gráfico con el número **1**.
 ![pa](../images/4/9.png)
 
 6. Agregar **Value mappings** dentro de la configuración del gráfico: 
@@ -147,7 +147,7 @@ up{job="spring-application"}
 
 
 4. En las opciones del panel añadir la siguiente información:
-- **Title:** Tasa de éxito en los últimos 30 minutos
+- **Title:** Tasa de éxito en los últimos 30 minutos.
 
 5. **Save dashboard** y acomode el panel al tamaño que usted prefiera.
 
