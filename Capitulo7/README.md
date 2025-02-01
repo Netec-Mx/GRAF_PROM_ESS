@@ -3,10 +3,10 @@
 Se espera que el alumno implemente una red segura con un certificado SSL para cifrar la información de grafana.  
 
 ## Objetivos
-- Crear un certificado autofirmado usando **openssl**
-- Crear los archivo de configuración de **prometheus y grafana**
+- Crear un certificado autofirmado usando **openssl**.
+- Crear los archivo de configuración de **Prometheus y Grafana**.
 - Configurar un **docker compose** para el inicio de los contenedores.
-- Validar el certificado **SSL** para grafana
+- Validar el certificado **SSL** para Grafana.
 
 ## Duración aproximada:
 - 60 minutos.
@@ -109,7 +109,7 @@ IP.2 = 127.0.0.1
 openssl x509 -req -in certificado.csr -CA ca.crt  -CAkey ca.key -CAcreateserial -out certificado.crt -days 730 -sha256 -extfile certificado.v3.ext
 ```
 
-> **NOTA:** El comando anterior nos pedirá el **PEM pass phrase (1234)** y nos creará un archivo **certificado.crt**
+> **NOTA:** El comando anterior nos pedirá el **PEM pass phrase (1234)** y nos creará un archivo **certificado.crt**.
 
 9. En la carpeta **certificado** tendremos los siguientes archivos: 
  
@@ -117,7 +117,7 @@ openssl x509 -req -in certificado.csr -CA ca.crt  -CAkey ca.key -CAcreateserial 
 
 10. Copiar los archivos **certificado.crt** y **certificado.key**.
 
-11. En la carpeta **seguridad**, crear una nueva carpeta que llamaremos **volumen**. Pegar los archivos **certificado.crt** y **certificado.key**
+11. En la carpeta **seguridad**, crear una nueva carpeta que llamaremos **volumen**. Pegar los archivos **certificado.crt** y **certificado.key**.
 
 ![certificado y llave](../images/7/5.png)
 
