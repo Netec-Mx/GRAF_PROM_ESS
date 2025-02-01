@@ -185,9 +185,9 @@ scrape_configs:
 ```
 
 > **NOTA:** El archivo de configuración permite obtener los logs 
-del microservicio cliente y enviarlos a **loki**
-**promtail** funciona como un intermediario ya que **Loki** no puede 
-obtener directamente los **logs**
+del microservicio cliente y enviarlos a **Loki**.
+**Promtail** funciona como un intermediario ya que **Loki** no puede 
+obtener directamente los **logs**.
 
 3. Guardar el archivo y obtener su ruta absoluta:
 
@@ -202,7 +202,7 @@ tengas los siguientes archivos:
 
 ![carpeta loki](../images/8/1.png)
 
-2. Dentro de la carpeta **loki**, crear un nuevo archivo que llamaremos **docker-compose.yaml**
+2. Dentro de la carpeta **loki**, crear un nuevo archivo que llamaremos **docker-compose.yaml**.
 
 3. En el archivo **docker-compose.yaml** añadir el siguiente contenido:
 
