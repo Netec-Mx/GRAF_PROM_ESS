@@ -147,18 +147,18 @@ up{job="spring-application"}
 
     ![alt text](../images/5/12.png)
 
-- **Folder**: Alertas microservicio
+- **Folder**: Alertas microservicio.
 
-- **Evaluation group**: Cada minuto
+- **Evaluation group**: Cada minuto.
 
     ![grupos](../images/5/13.png)
 
 - **Add Labels**: 
-    - microservice: client
+    - microservice: client.
     
         ![alt text](../images/5/14.png)
 
-- **Contact Point:** Teams Contact
+- **Contact Point:** Teams Contact.
 
     ![contact](../images/5/15.png)
 
